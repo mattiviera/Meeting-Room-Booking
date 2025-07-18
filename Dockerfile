@@ -15,5 +15,6 @@ WORKDIR /app/src
 EXPOSE 5000
 
 # Ejecuta la app Flask
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python", "-m", "src.main"]
+
 
