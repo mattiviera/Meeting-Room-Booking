@@ -1,20 +1,17 @@
+# Usa una imagen base oficial de Python
 FROM python:3.11-slim
 
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copia todo el proyecto
+# Copia todos los archivos a la imagen
 COPY . .
 
 # Instala las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Establece el directorio de trabajo dentro de src
-WORKDIR /app/src
-
-# Expone el puerto
+# Expone el puerto en el que corre Flask
 EXPOSE 5000
 
-# Ejecuta la app Flask
-CMD ["python", "-m", "src.main"]
-
-
+# Ejecuta la app
+CMD ["python", "src/main.py"]
