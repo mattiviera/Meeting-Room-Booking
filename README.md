@@ -23,7 +23,7 @@ Aplicación web simple para gestionar usuarios, salas y reservas de reuniones.
 1. Cloná el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/meeting-room-booking.git
+   git clone https://github.com/mattiviera/Meeting-Room-Booking.git
    cd meeting-room-booking
    ```
 
