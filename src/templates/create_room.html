@@ -1,0 +1,15 @@
+{% extends "index.html" %} {% block content %}
+<h2>Crear Sala</h2>
+<form method="post">
+  <label
+    >Nombre:
+    <input type="text" name="name" required /> </label
+  ><br />
+  <label
+    >Capacidad:
+    <input type="number" name="capacity" required /> </label
+  ><br />
+  <button type="submit">Crear</button>
+</form>
+<a href="/rooms">Volver</a>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% block content %}
+<h2>Reservas</h2>
+
+<form method="get" action="/reservations">
+  <label>Filtrar por Usuario:
+    <select name="user_id">
+      <option value="">Todos</option>
+      {% for user in users %}
+      <option value="{{ user.id }}" {% if selected_user == user.id %}selected{% endif %}>{{ user.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <label>Filtrar por Sala:
+    <select name="room_id">
+      <option value="">Todas</option>
+      {% for room in rooms %}
+      <option value="{{ room.id }}" {% if selected_room == room.id %}selected{% endif %}>{{ room.name }}</option>
+      {% endfor %}
+    </select>
+  </label>
+
+  <button type="submit">Filtrar</button>
+  <a href="/reservations">Limpiar filtros</a>
+</form>
+
+<a href="/reservations/new">Crear Reserva</a>
+
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Sala</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r in reservations %}
+    <tr>
+      <td>{{ r.user_name }}</td>
+      <td>{{ r.room_name }}</td>
+      <td>{{ r.start_time }}</td>
+      <td>{{ r.end_time }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="/">Volver</a>
+{% endblock %}

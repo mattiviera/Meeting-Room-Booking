@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meeting Room Booking</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Meeting Room Booking</h1>
+        <nav>
+          <a href="{{ url_for('home') }}">Inicio</a> |
+          <a href="{{ url_for('list_users') }}">Usuarios</a> |
+          <a href="{{ url_for('list_rooms') }}">Salas</a> |
+          <a href="{{ url_for('list_reservations') }}">Reservas</a>
+        </nav>
+        <hr style="margin: 20px 0" />
+      </header>
+
+      {% block content %}
+      <!-- Aquí va el contenido de cada página -->
+      {% endblock %}
+    </div>
+  </body>
+</html>

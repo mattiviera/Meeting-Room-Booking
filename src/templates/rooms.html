@@ -1,0 +1,20 @@
+{% extends "index.html" %} {% block content %}
+<h2>Salas</h2>
+<a href="/rooms/new">Crear Sala</a>
+<ul>
+  {% for room in rooms %}
+  <li>
+    {{ room.name }} - Capacidad: {{ room.capacity }}
+    <a href="/rooms/edit/{{ room.id }}">Editar</a>
+    <form
+      action="/rooms/delete/{{ room.id }}"
+      method="post"
+      style="display: inline"
+    >
+      <button type="submit">Eliminar</button>
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+<a href="/">Volver</a>
+{% endblock %}

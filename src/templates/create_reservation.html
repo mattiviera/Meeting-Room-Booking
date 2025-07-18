@@ -1,0 +1,40 @@
+{% extends "index.html" %} {% block content %}
+<h2>Crear Reserva</h2>
+
+{% if error %}
+<p style="color: red">{{ error }}</p>
+{% endif %}
+
+<form method="post">
+  <label>
+    Usuario:
+    <select name="user_id" required>
+      {% for user in users %}
+      <option value="{{ user.id }}">{{ user.name }}</option>
+      {% endfor %}
+    </select> </label
+  ><br />
+
+  <label>
+    Sala:
+    <select name="room_id" required>
+      {% for room in rooms %}
+      <option value="{{ room.id }}">{{ room.name }}</option>
+      {% endfor %}
+    </select> </label
+  ><br />
+
+  <label>
+    Inicio:
+    <input type="datetime-local" name="start_time" required /> </label
+  ><br />
+
+  <label>
+    Fin:
+    <input type="datetime-local" name="end_time" required /> </label
+  ><br />
+
+  <button type="submit">Crear Reserva</button>
+</form>
+
+{% endblock %}
