@@ -43,15 +43,28 @@ python src/main.py
 Abrí en tu navegador:
 http://localhost:5000
 
-🗂 Estructura del Proyecto
+## Uso con Docker
 
-meeting-room-booking/
-├── src/
-│ ├── main.py
-│ ├── models/
-│ ├── repositories/
-│ ├── templates/
-│ └── static/
-│ └── style.css
-├── requirements.txt
-└── README.md
+### Construir la imagen Docker
+
+Desde la raíz del proyecto (donde está el `Dockerfile`), ejecuta:
+
+docker build -t meeting-room-app .
+
+Esto crea una imagen llamada `meeting-room-app` con todo lo necesario para correr la aplicación.
+
+---
+
+### Ejecutar el contenedor
+
+Para levantar la app en un contenedor y mapear el puerto 5000 al host, ejecuta:
+
+docker run -p 5000:5000 meeting-room-app
+
+---
+
+### Acceder a la aplicación
+
+Abre tu navegador y entra a:
+
+http://localhost:5000/
